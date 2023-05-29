@@ -8,7 +8,7 @@
 		<h1>小樂透</h1>
 	
 		<div id="game-rules">
-			<h2>遊戲規則:</h2>
+			<h2>遊戲規則:</h2>		//要求1
 			<p>輸入1~10中的三個數字(不可重複)  系統會隨機生成同範圍1~10的三個數字並開獎  獎項隨著對中號碼的數量分成:</p>
 			<ul>
 				<li>對中三個號碼:頭獎</li>
@@ -17,7 +17,7 @@
 			</ul>
 		</div>
 
-		<div id="game-form">
+		<div id="game-form">					//要求1
 			<label for="number1">第一個數字:</label>
 			<input type="number" id="number1" min="1" max="10"><br>
 		
@@ -54,7 +54,7 @@
 				displayResult(matchCount, prizeAmount,winningNumbers);
 			}
 		
-			function generateWinningNumbers() {		//生成得獎號碼
+			function generateWinningNumbers() {		//生成得獎號碼(要求1)	
 				var winningNumbers = [];
 				while (winningNumbers.length < 3) {
 					var randomNum = Math.floor(Math.random() * 10) + 1;		//Math.floor =>將數字無條件取整數
@@ -65,7 +65,7 @@
 				return winningNumbers;
 			}
 		
-			function countMatches(userNumbers, winningNumbers) {
+			function countMatches(userNumbers, winningNumbers) {	//比對是否中獎(要求1)
 				var matchCount = 0;
 				for (var i = 0; i < userNumbers.length; i++) {
 					if (winningNumbers.indexOf(parseInt(userNumbers[i])) !== -1) {	//利用indexOf()查找數字是否匹配(中獎)
@@ -75,7 +75,7 @@
 				return matchCount;
 			}
 		
-			function calculatePrize(matchCount) {
+			function calculatePrize(matchCount) {		//要求2
 				var prizeAmount = 0;
 				if (matchCount === 3) {
 					prizeAmount = 1000;		//頭獎獎金
@@ -87,7 +87,7 @@
 				return prizeAmount;
 			}
 		
-			function displayResult(matchCount, prizeAmount,winningNumbers) {
+			function displayResult(matchCount, prizeAmount,winningNumbers) {	//要求2
 				var resultDiv = document.getElementById("result");
 				var resultMsg;
 			
@@ -111,7 +111,7 @@
 				resultDiv.classList.remove("hidden");
 			}
 		
-			function resetGame() {		//重新遊戲
+			function resetGame() {		//重新遊戲(要求4)
 				document.getElementById("number1").value = "";
 				document.getElementById("number2").value = "";
 				document.getElementById("number3").value = "";
@@ -119,7 +119,7 @@
 				document.getElementById("result").classList.add("hidden");
 			}
 		
-			function validateInput(numbers) {	//檢查輸入的數字有沒有效，無效則警告
+			function validateInput(numbers) {	//檢查輸入的數字有沒有效，無效則警告(要求5)
 				var isValid = true;		
 				var errorMessages = [];
 			
