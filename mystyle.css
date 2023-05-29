@@ -1,20 +1,20 @@
-h1 {			 		//要求3(1/5)
+h1 {			 		<!--要求3(1/5)-->
 	background-color: rgb(27,222,145);
 	color: rgb(38,172,222);
 	text-align: center;
 }
 
-#game-rules {				//要求3(2/5)
+#game-rules {				<!--要求3(2/5)-->
 	background-color: #C387FA;
 	color: #9D2BFA;
 }
 
-input{					//要求3(3/5)
+input{					<!--要求3(3/5)-->
 	width:200px;
 	height:50px;
 }
 
-label{					//要求3(4/5)
+label{					要求3(4/5)
 	color: #5D51FA;
 }
 
